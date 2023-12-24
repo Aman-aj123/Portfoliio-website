@@ -1,0 +1,693 @@
+/* google fonts  */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,300&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+   user-select: none;
+   text-decoration: none;
+}
+
+html,
+body {
+   height: 100%;
+   width: 100%;
+   overflow-x: hidden;
+   scroll-behavior: smooth;
+   scroll-padding-top: 95px;
+   transition: all .4s linear;
+}
+
+::-webkit-scrollbar {
+   width: 0px;
+}
+
+/* preloader  */
+
+#preloader {
+   background: rgba(5, 5, 5, 0.981);
+   height: 100vh;
+   width: 100%;
+   position: absolute;
+   visibility: visible;
+   top: 0;
+   left: 0;
+   right: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 9999;
+}
+
+#preloader .loader {
+   width: 70px;
+   height: 70px;
+   border-radius: 50%;
+   border: 7px solid rgb(44, 227, 227);
+   border-right: 7px solid transparent;
+   animation: loader linear 1s infinite;
+}
+
+@keyframes loader {
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+.active-loader {
+   background: white !important;
+   visibility: hidden !important;
+}
+
+
+/* ============ Starting header Section  ============ */
+#header {
+   position: sticky !important;
+   top: 0;
+   z-index: 999;
+   display: flex;
+   flex-direction: row-reverse;
+   justify-content: space-around;
+   align-items: center;
+   height: 83px;
+   background: hsl(180, 8%, 93%);
+   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+#header .list-items {
+   display: flex;
+   gap: 4px;
+}
+
+#header .list-items li {
+   list-style: none;
+}
+
+.list-items li a {
+   text-decoration: none;
+   color: black;
+   font-weight: 600;
+   text-transform: capitalize;
+   transition: .3s;
+}
+
+.list-items li a:hover {
+   color: rgba(0, 0, 0, 0.697);
+}
+
+#header .logo {
+   display: flex;
+   gap: 18px;
+   align-items: center;
+}
+
+#header .logo h1 {
+   font-size: 35px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background: linear-gradient(to left, aqua, rgb(234, 86, 143));
+   color: transparent;
+   -webkit-background-clip: text;
+}
+
+.logo .mode-area {
+   position: relative;
+   width: 77px;
+   height: 31px;
+   border-radius: 15px;
+   background: rgb(236, 229, 229);
+   box-shadow: 0 0 8px inset #c8c0c0, 0 0 2px rgb(114, 98, 98);
+   cursor: pointer;
+}
+
+.logo .mode-area .mode-child {
+   position: absolute;
+   width: 26px;
+   height: 26px;
+   top: 3px;
+   left: 3px;
+   border-radius: 50%;
+   background-color: white;
+   box-shadow: 0 0 8px #e9d7d7, 0 0 8px #f5f2f2 inset;
+   transition: .3s linear;
+}
+
+.logo .mode-area .slide-pannel {
+   left: 47px;
+   background: rgb(222, 215, 215);
+   box-shadow: none;
+}
+
+.bg-black {
+   background: black;
+}
+
+.bg-pannel {
+   background: rgb(181, 178, 178) !important;
+}
+
+
+
+/* others */
+
+.list-items #menu-icons {
+   opacity: 0;
+   font-size: 13px;
+   margin-right: 3px;
+}
+
+.list-items .menu-head {
+   margin-bottom: 5px;
+   margin-top: 6px;
+   font-size: 25px;
+   letter-spacing: 1px;
+   display: none;
+}
+
+.menu {
+   height: 38px;
+   width: 50px;
+   border: 3px solid aqua;
+   display: flex;
+   gap: 5px;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   visibility: hidden;
+   position: absolute;
+   right: 13px;
+   z-index: 999;
+}
+
+.menu .common {
+   height: 4px;
+   width: 35px;
+   border-radius: 4px;
+   background-color: aqua;
+}
+
+
+
+/* display  */
+.displayHeader {
+   visibility: visible !important;
+   right: 0 !important;
+}
+
+.changeBg {
+   background: rgba(0, 0, 0, 0.1);
+}
+
+.hide-middle-line {
+   visibility: hidden;
+   position: absolute;
+}
+
+.move-top-line {
+   transform: rotate(-45deg);
+   margin: -3px;
+   transition: .3s;
+}
+
+.move-bottom-line {
+   transform: rotate(45deg);
+   margin: -4.80px;
+   transition: .3s;
+}
+
+/* ============ Ending header Section  ============ */
+
+
+
+
+/* Starting Home Section  */
+#home {
+   width: 100%;
+   position: relative;
+   margin-top: 50px;
+   background-image: url("https://i.pinimg.com/originals/5c/ad/df/5caddf7c21d3d983ad523210934ad8b4.gif");
+   background-blend-mode: darken;
+   background-size: cover;
+   background-position: center;
+}
+
+#home .image-follow {
+   position: absolute;
+   z-index: -1;
+   transition: .3s;
+   animation: animate_image 5.70s linear infinite;
+}
+
+#home .image-follow img {
+   width: 110px;
+   height: 110px;
+   object-fit: cover;
+}
+
+@keyframes animate_image {
+   0% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+.home-text {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 360px;
+   font-size: 20px;
+}
+
+.home-btn {
+   margin-top: 10px;
+}
+
+.home-btn button {
+   width: 188px;
+   padding: 12px 0;
+   transition: .3s;
+   color: rgb(56, 54, 54);
+   font-size: 16px;
+   letter-spacing: .80px;
+   cursor: pointer;
+   border-radius: 5px;
+   border: none;
+}
+
+.home-btn button:nth-child(1) {
+   margin-right: 10px;
+   color: rgb(28, 27, 27);
+   background: rgb(64, 229, 229);
+   box-shadow: 0 0 6px rgb(12, 171, 171);
+   transition: .3s;
+}
+
+.home-btn button:nth-child(1):hover {
+   margin-right: 10px;
+   background: rgb(29, 182, 182);
+   transition: .3s;
+}
+
+.home-btn button:nth-child(2) {
+   margin-right: 10px;
+   color: rgb(67, 224, 224);
+   border: 2px solid rgb(64, 229, 229);
+   background: transparent;
+   transition: .3s;
+}
+
+.home-text h1 {
+   color: rgb(12, 171, 171);
+   font-size: 2.85em;
+   line-height: 1.2;
+}
+
+.home-text h1 span {
+   color: rgba(34, 215, 215, 0.859);
+   text-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+   font-size: 0.93em;
+   white-space: none;
+}
+
+.home-image img {
+   width: 360px;
+   height: 360px;
+   object-fit: cover;
+   border-radius: 50%;
+   background: linear-gradient(45deg, deeppink, aqua);
+   padding: 8px;
+}
+
+/* Ending Home Section  */
+
+
+
+/* Starting About section  */
+#about {
+   margin-top: 46px;
+}
+
+#about .about-text {
+   width: 38vw;
+   margin-top: 30px;
+   font-size: 12px;
+}
+
+.about-text h3 {
+   font-size: 1.6em;
+}
+
+.about-text h1 {
+   font-size: 2.7em;
+   color: rgba(34, 215, 215, 0.859);
+   line-height: 1.1;
+   margin-bottom: 7px;
+}
+
+.about-text p {
+   font-size: 1.3em;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: #484242;
+   font-weight: 500 !important;
+}
+
+.about-text h2 {
+   font-size: 1.4em;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: #201e1e;
+   font-weight: 600 !important;
+   margin-bottom: 3px;
+}
+
+.about-text .name-info {
+   margin-top: 9px;
+}
+
+.about-text span {
+   font-size: .90em;
+   margin-left: 5px;
+   color: rgb(79, 76, 76);
+   font-weight: 500 !important;
+}
+
+#about .about-cont {
+   width: 100%;
+   justify-content: space-evenly;
+}
+
+#about .about-image img {
+   width: 330px;
+   height: 360px;
+   object-fit: cover;
+   border-radius: 50%;
+   background: linear-gradient(-45deg, deeppink, aqua);
+   padding: 7px;
+}
+
+/* Ending About section  */
+
+
+
+
+/* Starting skill section  */
+#skill {
+   margin-top: 60px;
+}
+
+#skill .skill-head {
+   position: relative;
+   text-align: center;
+   color: rgb(12, 171, 171);
+   font-size: 40px;
+   letter-spacing: 1px;
+}
+
+#skill .skill-head::after {
+   content: '';
+   position: absolute;
+   bottom: 5px;
+   left: 49%;
+   height: 4px;
+   width: 30px;
+   background-color: rgb(12, 171, 171);
+   border-radius: 5px;
+}
+
+#skill .skill-cont h2 {
+   font-size: 17px;
+   letter-spacing: 1px;
+   color: rgb(4, 40, 40);
+}
+
+#skill .skill-cont {
+   flex-direction: column;
+   gap: 15px;
+   min-width: 280px;
+   width: 60vw;
+   margin: auto;
+}
+
+
+.skill-parent .first {
+   width: 86%;
+   height: 20px;
+   background-color: rgba(255, 170, 0, 0.875);
+   border-radius: 5px;
+}
+
+.skill-parent .second {
+   width: 78%;
+   height: 20px;
+   background-color: rgba(0, 128, 0, 0.829);
+   border-radius: 5px;
+}
+
+.skill-parent .third {
+   width: 60%;
+   height: 20px;
+   background-color: rgba(0, 191, 255, 0.826);
+   border-radius: 5px;
+}
+
+.skill-parent .fourth {
+   width: 20%;
+   height: 20px;
+   background-color: rgba(255, 20, 145, 0.834);
+   border-radius: 5px;
+}
+
+/* Ending skill section  */
+
+
+/* Starting Project section  */
+#project {
+   margin-top: 80px;
+}
+
+
+.project-cont {
+   margin-top: 20px;
+   display: grid;
+   grid-template-columns: repeat(3, 0fr);
+   justify-content: space-evenly;
+   row-gap: 30px;
+}
+
+.project-image img {
+   width: 330px;
+   height: 240px;
+   object-fit: cover;
+}
+
+.project-box h3 {
+   color: rgb(4, 40, 40);
+   margin-bottom: 7px;
+}
+
+.project-items {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+   padding: 10px 3px;
+   width: 330px;
+   text-align: center;
+   box-shadow: 0 0 10px rgb(138, 130, 130);
+   border-radius: 5px;
+   transition: .2s linear;
+}
+
+.project-items:hover {
+   transform: scale(1.04) !important;
+}
+
+
+#project h1 {
+   color: rgb(12, 171, 171);
+   font-size: 40px;
+   text-align: center;
+}
+
+/* Ending Project section  */
+
+
+
+
+
+/* Starting contact section  */
+#contact {
+   position: relative;
+   margin-top: 90px;
+}
+
+#contact .contact-heading {
+   text-align: center;
+   color: rgb(12, 171, 171);
+   font-size: 38px;
+   letter-spacing: 1px;
+   margin-bottom: 15px;
+}
+
+#contact form {
+   width: 70vw;
+   margin: auto;
+   min-width: 280px;
+}
+
+form .input-boxes {
+   position: relative;
+   width: 100%;
+}
+
+
+form .input-boxes input,
+textarea {
+   width: 100%;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+   font-size: 16px;
+   font-weight: 460 !important;
+   color: #131212;
+   letter-spacing: .60px;
+   padding: 10px 20px;
+   border-radius: 5px;
+   border: 1px solid gainsboro;
+   outline-color: rgb(29, 182, 182);
+}
+
+#contact form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+
+form .input-boxes textarea {
+   height: 180px;
+}
+
+form .input-boxes {
+   margin-bottom: 17px;
+}
+
+form .input-boxes label {
+   width: 100px;
+   display: inline-block;
+   color: rgb(38, 37, 37);
+}
+
+form .form-btn {
+   margin-top: 17px;
+}
+
+form .form-btn button {
+   width: 50%;
+   padding: 10px 0px;
+   min-width: 165px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 16px;
+   letter-spacing: .50px;
+   background: rgb(51, 234, 234);
+   color: rgb(28, 27, 27);
+   font-weight: 500;
+   cursor: pointer;
+   border: 1px solid gainsboro;
+   border-radius: 5px;
+   transition: .3s linear;
+}
+
+form .form-btn button:hover {
+   background: rgb(16, 152, 152);
+}
+
+
+/* Ending contact section  */
+
+
+
+/* Starting Footer section  */
+
+footer {
+   margin-top: 90px;
+}
+
+footer .bottom-footer {
+   text-align: center;
+   background: rgba(0, 0, 0, 0.1);
+   padding: 28px 0;
+}
+
+.bottom-footer p {
+   letter-spacing: .60px;
+   line-height: 1.2;
+   color: rgb(38, 37, 37);
+   font-size: 16px;
+   font-weight: 500;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer .main-footer {
+   background: rgba(0, 0, 0, 0.1);
+   display: flex;
+   align-items: center;
+   padding: 30px 0;
+   flex-wrap: wrap;
+   row-gap: 22px;
+}
+
+.footer-items {
+   list-style: none;
+}
+
+.footer-items img {
+   width: 100px;
+   height: 100px;
+   object-fit: cover;
+   background: linear-gradient(to right, orange, aqua, deeppink);
+   padding: 4px;
+   border-radius: 50%;
+}
+
+.footer-items h3 {
+   font-size: 17px;
+   color: #484242;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+   font-weight: 700;
+   margin-bottom: 13px;
+}
+
+.footer-items li {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: #201e1e;
+   font-size: 14px;
+   margin-bottom: 3px;
+   font-weight: 500;
+   transition: .3s;
+   cursor: pointer;
+}
+
+.footer-items li:hover {
+   margin-left: 3px;
+}
+
+.imp-links li a {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: #201e1e;
+   font-size: 14px;
+   margin-bottom: 3px;
+   font-weight: 500;
+   margin-bottom: 4px;
+}
+
+.footer-items span {
+   color: rgb(45, 44, 44);
+}
+
+/* Ending Footer section  */
